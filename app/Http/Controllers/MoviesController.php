@@ -8,6 +8,7 @@ use App\Review;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 
 class MoviesController extends Controller
@@ -210,8 +211,10 @@ class MoviesController extends Controller
         $popupDialogData = array();
         parse_str( $request->popupDialogData, $popupDialogData );
 
+        $unique = ( $request->movieid )? 'unique:movies,title,' . $request->movieid : 'unique:movies';
+
         $validator = validator( $popupDialogData, [
-            'title' => 'required',
+            'title' => ['required', $unique],
             'description' => 'required',
         ]);
 
@@ -261,6 +264,8 @@ class MoviesController extends Controller
      */
     public function movie_delete( Request $request )
     {          
+        Auth::user()->votes()->where( 'movie_id', $request->movieid )->delete();
+        Auth::user()->reviews()->where( 'movie_id', $request->movieid )->delete();
         Auth::user()->movies()->where( 'id', $request->movieid )->delete();
 
         $sort_request = new Request( [ 'action' => $request->sort_by ] );
