@@ -210,10 +210,10 @@ class MoviesController extends Controller
         $popupDialogData = array();
         parse_str( $request->popupDialogData, $popupDialogData );
 
-        $unique = ( $request->movieid )? 'unique:movies,title,' . $request->movieid : 'unique:movies';
+        $unique = ( $request->movieid )? ',title,' . $request->movieid : '';
 
         $validator = validator( $popupDialogData, [
-            'title' => ['required', $unique],
+            'title' => ['required', 'unique:movies' . $unique],
             'description' => 'required',
         ]);
 
