@@ -16,7 +16,7 @@ class CreateReviewsTable extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->unsignedBigInteger('movie_id');
             $table->unsignedBigInteger('user_id');
-            $table->string('review');
+            $table->text('review');
             $table->dateTimeTz('created_at', 0)->default(DB::raw('CURRENT_TIMESTAMP'));
 
             $table->index('movie_id');
