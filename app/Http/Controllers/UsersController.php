@@ -18,9 +18,9 @@ class UsersController extends Controller
     {          
         $user = User::findOrFail( $user );
         
-        Auth::user()->where( 'id', $user )->delete();
-        Auth::user()->movies()->where( 'user_id', $user )->delete();
-        Auth::user()->votes()->where( 'user_id', $user )->delete();
-        Auth::user()->reviews()->where( 'user_id', $user )->delete();
+        Auth::user()->where( 'id', $user->id )->delete();
+        Auth::user()->movies()->where( 'user_id', $user->id )->delete();
+        Auth::user()->votes()->where( 'user_id', $user->id )->delete();
+        Auth::user()->reviews()->where( 'user_id', $user->id )->delete();
     }
 }
