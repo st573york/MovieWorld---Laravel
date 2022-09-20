@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 class FooterController extends Controller
 {
-    private static function getRevision()
+    private static function getRevision( $product_path )
     {
-        $status = @shell_exec( 'svnversion ' . dirname( __DIR__, 2 ) );
+        $status = @shell_exec( "svnversion $product_path" );
         if( preg_match( '/(\d+)M/', $status, $matches ) ) {
             return $matches[1];
         }
@@ -18,10 +18,11 @@ class FooterController extends Controller
 
     public static function show()
     {           
+        $product_path = env('APP_PATH');
         $product_name = env('APP_NAME');
         $product_version = env('APP_VERSION');
         $author = env('APP_AUTHOR');
 
-        return "$author - $product_name v. {$product_version}.".self::getRevision();
+        return "$author - $product_name v. {$product_version}.".self::getRevision( $product_path );
     }
 }
