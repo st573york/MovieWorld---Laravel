@@ -64,19 +64,27 @@
 }
 
 .user_vote_data {
-    margin: 15px 15px 0px 15px;
+    margin: 0px 10px 0px 10px;
     color: initial;
 }
 
-.user_vote_data.last {
-    margin: 15px;
+.user_vote_data:first-child {
+    margin: 10px 10px 0px 10px;
+}
+
+.user_vote_data:last-child {
+    margin: 0px 10px 10px 10px;
+}
+
+.user_vote_data:only-child {
+    margin: 10px;
 }
 
 .review_data {
     margin: 15px;
 }
 
-.review_data:not(.last) {
+.review_data:not(:last-child) {
     border-bottom: 1px solid #ccc;
 }
 
@@ -85,8 +93,12 @@
     padding: 0px 0px 5px 0px;
 }
 
-.review_data .bottom_panel:not(.last) {
+.review_data .bottom_panel {
     padding: 0px 0px 15px 0px;
+}
+
+.review_data:last-child .bottom_panel {
+    padding: 0px;
 }
 
 .like_btn span,

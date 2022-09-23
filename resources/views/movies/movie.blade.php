@@ -7,7 +7,7 @@
 <!-- Movie Data -->
 <div id="movie_{{ $movie->movieid }}" class="movie_data">
     <div class="row">
-        <div class="col movie_title">
+        <div class="col col-md-8 movie_title">
             <span>{{ $movie->title }}</span>
         </div>
         <div class="col movie_posted text-right">
@@ -31,10 +31,7 @@
                         <a href="" class="dropdown-link only-text" data-toggle="dropdown"><span class="movie_votes_text">{{ $like_votes_num }} {{ __('likes') }}</span></a>
                         <div class="dropdown-menu data">
                         @foreach( $movie->users_by_like as $user )
-                            @php
-                                $class = ( last( $movie->users_by_like ) == $user )? 'last' : '';
-                            @endphp
-                            <div class="user_vote_data {{ $class }}">{{ $user }}</div>
+                            <div class="user_vote_data">{{ $user }}</div>
                         @endforeach
                         </div>
                     @else
@@ -55,10 +52,7 @@
                         <a href="" class="dropdown-link only-text" data-toggle="dropdown"><span class="movie_votes_text">{{ $hate_votes_num }} {{ __('hates') }}</span></a>
                         <div class="dropdown-menu data">
                         @foreach( $movie->users_by_hate as $user )
-                            @php
-                                $class = ( last( $movie->users_by_hate ) == $user )? 'last' : '';
-                            @endphp
-                            <div class="user_vote_data {{ $class }}">{{ $user }}</div>
+                            <div class="user_vote_data">{{ $user }}</div>
                         @endforeach
                         </div>
                     @else
@@ -78,12 +72,9 @@
                         <a href="" class="dropdown-link only-text" data-toggle="dropdown"><span class="movie_votes_text">{{ $reviews_num }} {{ __('reviews') }}</span></a>
                         <div class="dropdown-menu data">
                         @foreach( $movie->reviews as $review )
-                            @php
-                                $class = ( last( $movie->reviews ) == $review )? 'last' : '';
-                            @endphp
-                            <div class="review_data {{ $class }}">
+                            <div class="review_data">
                                 <div class="top_panel">By {{ $review->username }} - {{ TimeController::get_time_ago( $review->creation_date ) }}</div>
-                                <div class="bottom_panel {{ $class }}">{{ $review->review }}</div>
+                                <div class="bottom_panel">{{ $review->review }}</div>
                             </div>
                         @endforeach
                         </div>
