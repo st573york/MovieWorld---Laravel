@@ -12,25 +12,12 @@
     background: #ccd6e0;
 }
 
+.action_logo,
+.action {
+    text-align: center;
+}
+
 .action {
     font-size: 30px;
-    padding: 0px 0px 0px 4px;
-}
-
-.movies {
-    padding: 10px 0px 10px 5px;
-}
-
-.action_message {
-    padding: 10px 5px 5px 5px;
-}
-
-.error_message {
-    color: red;
-    font-weight: bold;
-}
-
-.success_message {
-    color: #666;
-    font-weight: bold;
+    padding: 5px;
 }

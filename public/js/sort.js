@@ -7,10 +7,10 @@ var sort_by = 'sort_by_date_most_recent';
 jQuery(function ($) {
 
     // Highlight default date most recent sort by option
-    $('.movie_actions_panel .dropdown-menu').find('a#' + sort_by).addClass('active');
+    $('.add_sort_movies .dropdown-menu').find('a#' + sort_by).addClass('active');
 
     // Highlight sort by option
-    $('.movie_actions_panel .dropdown-menu a').on('click', function () {
+    $('.add_sort_movies .dropdown-menu a').on('click', function () {
         $(this).parent().find('a').removeClass('active');
         $(this).addClass('active');
     });
@@ -26,7 +26,7 @@ function sortMovies(obj) {
         success: function (data) {
             updateMovies(data);
 
-            if (obj.action != 'sort_by_test') {
+            if (obj.action != 'sort_by_text') {
                 sort_by = obj.action;
             }
         },

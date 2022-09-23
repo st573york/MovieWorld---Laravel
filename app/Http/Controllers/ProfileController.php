@@ -20,7 +20,7 @@ class ProfileController extends Controller
     {
         $user = User::findOrFail( $user );
         
-        return view('profiles.index', [
+        return view('profile.index', [
             'user' => $user,
         ]);
     }

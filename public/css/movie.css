@@ -1,24 +1,23 @@
 .found_movies {
     font-size: 20px;
-    padding: 10px 0px 10px 0px;
+}
+
+.found_movies,
+.add_sort_movies {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .movie_container {
-    margin: 124px 275px 62px 275px;
-    border-top: 1px solid;
-    border-bottom: 1px solid;
+    margin-top: 60px;
+    margin-bottom: 60px;
 }
 
 .movie_content {
     padding: 0px 0px 10px 0px;
 }
 
-.movie_actions {
-    padding: 0px 0px 0px 10px;
-}
-
 .movie_data {
-    display: grid;
     margin: 0px 0px 5px 0px;
     padding: 10px;
     border: 1px solid;
@@ -26,88 +25,29 @@
     background-color: #ffffff;
 }
 
-.movie_data_top,
-.movie_data_middle,
-.movie_data_bottom,
-.movie_data_actions {
-    clear: both;
-}
-
-.movie_data_top,
-.movie_data_bottom {
-    line-height: 30px;
-}
-
-.movie_data_middle {
-    padding: 10px 0px 10px 0px;
-}
-
-.movie_data_bottom {
-    text-align: center;
-}
-
-.movie_num_container {
-    float: left;
-    width: 33%;
-}
-
-.movie_btn_container {
-    display: inline-block;
-    width: 33%;
-}
-
-.movie_data_actions {
-    text-align: right;
-    padding: 10px 0px 0px 0px;
-}
-
 .movie_title {
-    float: left;
     font-size: 25px;
     font-weight: bold;
+    line-height: 30px;
 }
 
 .movie_posted,
 .movie_posted_by {
-    float: right;
     font-size: 20px;
-    width: 33%;
-    text-align: right;
+    line-height: 30px;
 }
 
-.movie_votes_num,
-.movie_reviews_num {
-    float: left;
+.movie_data_middle {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-.movie_votes_btn,
-.movie_review_btn {
-    display: inline-block;
+.movie_data_actions {
+    padding-top: 10px;
 }
 
 .movie_posted_by_user {
     color: #007bff;
-}
-
-.num_separator,
-.btn_separator {
-    float: inherit;
-}
-
-.num_separator {
-    padding: 0px 5px 0px 5px;
-}
-
-.movie_likes {
-    float: left;
-}
-
-.movie_hates {
-    float: inherit;
-}
-
-.movie_reviews {
-    float: right;
 }
 
 .movie_votes_text:hover {
@@ -160,16 +100,13 @@
 }
 
 .review_btn {
-    float: right;
-    height: 18px;
-    width: 18px;
-    cursor: pointer;
-    margin: 8px 0px 0px 10px;
-    background-image: url('/images/review.png');
+    padding: 0px 0px 0px 6px;
+    margin: 2px 0px 0px 0px;
 }
 
 .review_btn:hover {
-    background-image: url('/images/review-hover.png');
+    background: url('/images/review-hover.png') no-repeat;
+    background-origin: content-box;
 }
 
 a.vote {

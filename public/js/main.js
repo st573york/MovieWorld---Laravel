@@ -24,8 +24,8 @@ jQuery(function ($) {
     });
 
     // Trigger ajax on search input change                                                                                                                                                                               
-    $('input#searchtext').on('input propertychange', function () {
-        $('.movie_actions_panel .dropdown-menu a').removeClass('active');
+    $($('input[type="search"]')).on('input propertychange', function () {
+        $('.add_sort_movies .dropdown-menu a').removeClass('active');
 
         if (requestTimer) {
             window.clearTimeout(requestTimer);
@@ -40,7 +40,7 @@ jQuery(function ($) {
     });
 
     // Scroll to top when dropdown menu is visible
-    $('.dropdown-link, .dropdown-btn').on('click', function () {
+    $('.dropdown-link').on('click', function () {
         $('.dropdown-menu').animate({ scrollTop: 0 });
     });
 
