@@ -21,7 +21,7 @@
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="action_logo"><a href="/"><img src="{{ asset('images/movies-icon.jpeg') }}" class="logo"/></a></div>
-                    <div class="action">{{ __('Login') }}</div>
+                    <div class="action">{{ __('Sign in') }}</div>
                     <div class="field">
                         <input id="username" type="text" name="username" class="form-control @error('username') is-invalid @enderror" value="{{ old('username') }}" required autocomplete="off" autofocus placeholder="Username">
 
@@ -43,7 +43,7 @@
 
                     </div>
                     <div class="button">
-                        <button class="btn btn-primary btn-sm btn-block" type="submit">Login</button>     
+                        <button class="btn btn-primary btn-sm btn-block" type="submit">Sign in</button>     
                     </div>       
                     <div class="field text">{{ __('New to') }} {{ env('APP_NAME') }}{{ __('?') }} <a href="{{ route('register') }}" class="only-text">{{ __('Join now') }}</a></div>
                 </form>

@@ -100,7 +100,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                  document.getElementById( 'logout-form' ).submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Sign out') }}
                                     </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
@@ -111,7 +111,7 @@
                     @else
                         <!-- Navbar User Actions -->
                         <div class="pt-2 pt-lg-0">
-                            <button class="btn btn-link" type="button" onclick="location.href='/login'">{{ __('Log in') }}</button>
+                            <button class="btn btn-link" type="button" onclick="location.href='/login'">{{ __('Sign in') }}</button>
                             <button class="btn btn-light btn-sm" type="button" onclick="location.href='/register'">{{ __('Sign up') }}</button>
                         </div>
                     @endauth

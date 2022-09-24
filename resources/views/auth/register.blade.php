@@ -58,7 +58,7 @@
                     <div class="button">
                         <button class="btn btn-primary btn-sm btn-block" type="submit">Register</button>     
                     </div>       
-                    <div class="field text">{{ __('Already on') }} {{ env('APP_NAME') }}{{ __('?') }} <a href="{{ route('login') }}" class="only-text">{{ __('Log in') }}</a></div>
+                    <div class="field text">{{ __('Already on') }} {{ env('APP_NAME') }}{{ __('?') }} <a href="{{ route('login') }}" class="only-text">{{ __('Sign in') }}</a></div>
                 </form>
             </div>
         </div>
