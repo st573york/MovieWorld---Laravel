@@ -16,36 +16,38 @@
 
     </head>
     <body>
-        <div class="main">
-            <form method="POST" action="{{ route('login') }}">
-                @csrf
-                <div class="action_logo"><a href="/"><img src="{{ asset('images/movies-icon.jpeg') }}" class="logo"/></a></div>
-                <div class="action">{{ __('Login') }}</div>
-                <div class="field">
-                    <input id="username" type="text" name="username" class="form-control @error('username') is-invalid @enderror" value="{{ old('username') }}" required autocomplete="off" autofocus placeholder="Username">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="main">
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
+                    <div class="action_logo"><a href="/"><img src="{{ asset('images/movies-icon.jpeg') }}" class="logo"/></a></div>
+                    <div class="action">{{ __('Login') }}</div>
+                    <div class="field">
+                        <input id="username" type="text" name="username" class="form-control @error('username') is-invalid @enderror" value="{{ old('username') }}" required autocomplete="off" autofocus placeholder="Username">
 
-                    @error('username')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
+                        @error('username')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
 
-                </div>
-                <div class="field">
-                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="off" placeholder="Password">
+                    </div>
+                    <div class="field">
+                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="off" placeholder="Password">
 
-                    @error('password')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
+                        @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
 
-                </div>
-                <div class="button">
-                    <button class="btn btn-primary btn-sm btn-block" type="submit">Login</button>     
-                </div>       
-                <div class="field text">{{ __('New to') }} {{ env('APP_NAME') }}{{ __('?') }} <a href="{{ route('register') }}" class="only-text">{{ __('Join now') }}</a></div>
-            </form>
+                    </div>
+                    <div class="button">
+                        <button class="btn btn-primary btn-sm btn-block" type="submit">Login</button>     
+                    </div>       
+                    <div class="field text">{{ __('New to') }} {{ env('APP_NAME') }}{{ __('?') }} <a href="{{ route('register') }}" class="only-text">{{ __('Join now') }}</a></div>
+                </form>
+            </div>
         </div>
         <nav class="navbar fixed-bottom navbar-dark bg-dark">
             <div class="container justify-content-md-center">

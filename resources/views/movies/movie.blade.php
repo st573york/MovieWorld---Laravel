@@ -6,20 +6,20 @@
 
 <!-- Movie Data -->
 <div id="movie_{{ $movie->movieid }}" class="movie_data">
-    <div class="row">
-        <div class="col col-md-8 movie_title">
+    <div class="row no-gutters">
+        <div class="col-12 col-md-8 movie_title">
             <span>{{ $movie->title }}</span>
         </div>
-        <div class="col movie_posted text-right">
+        <div class="col-12 col-md-4 text-left text-md-right movie_posted">
             <span>{{ __('Posted') }} {{ $movie->posted }}</span>
         </div>
     </div>
-    <div class="row">
-        <div class="col movie_data_middle">
+    <div class="row no-gutters" style="padding: 10px 0px 10px 0px;">
+        <div class="col border-top border-bottom movie_data_middle">
             <span>{{ $movie->description }}</span>
         </div>
     </div>
-    <div class="row" style="line-height: 30px;">
+    <div class="row no-gutters" style="line-height: 30px;">
         <div class="col-12 col-md-4">
             @php
                 $like_votes_num = NumberController::short_number( count( $movie->users_by_like ) );
@@ -86,7 +86,7 @@
                 @endauth
             </span>
         </div>
-        <div class="col-12 col-md-4 text-center">
+        <div class="col-12 col-md-4 text-left text-md-center">
             @auth
                 @if( Auth::user()->username != $movie->posted_by )
                     <span class="like_btn">
@@ -131,7 +131,7 @@
                 @endif
             @endauth
         </div>
-        <div class="col-12 col-md-4 text-right">
+        <div class="col-12 col-md-4 text-left text-md-right">
             <div class="movie_posted_by">{{ __('Posted by') }} <span class="movie_posted_by_user">{{ $movie->posted_by }}</div>
         </div>
     </div>
@@ -158,8 +158,8 @@
             
                 $ondelete = 'javascript:confirmMovieDeletion( '.json_encode( $obj ).' );';
             @endphp
-            <div class="row">
-                <div class="col movie_data_actions text-right">
+            <div class="row no-gutters" style="padding-top: 10px;">
+                <div class="col border-top text-right movie_data_actions">
                     <div class="btn-group">
                         <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">{{ __('Actions') }}</button>
                         <div class="dropdown-menu">                        
